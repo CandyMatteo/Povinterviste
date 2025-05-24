@@ -1,0 +1,11 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+ohfrywis.gensparkspace.com	TRUE	/	FALSE	1999999999	session_id	28e62c07-b5d8-48bb-b443-743592239a66:101ceb9394165d4bbda56d8d2bada8b565db7018d9d3296adbac56cf325a3e02
+ohfrywis.gensparkspace.com	TRUE	/	FALSE	1999999999	samesite	lax
+gensparkspace.com	TRUE	/	FALSE	1999999999	ARRAffinity	fe53543f1fc060fe2bfc1ddd8a9461f77bb246791154568debd81246b162cc78
+ohfrywis.gensparkspace.com	TRUE	/	FALSE	1999999999	ARRAffinitySameSite	fe53543f1fc060fe2bfc1ddd8a9461f77bb246791154568debd81246b162cc78
+gensparkspace.com	TRUE	/	FALSE	1999999999	SameSite	None
+www.genspark.ai	TRUE	/	FALSE	1999999999	ARRAffinity	fe53543f1fc060fe2bfc1ddd8a9461f77bb246791154568debd81246b162cc78
+www.genspark.ai	TRUE	/	FALSE	1999999999	ARRAffinitySameSite	fe53543f1fc060fe2bfc1ddd8a9461f77bb246791154568debd81246b162cc78
+www.genspark.ai	TRUE	/	FALSE	1999999999	SameSite	None
+
