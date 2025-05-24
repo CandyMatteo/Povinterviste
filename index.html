@@ -220,6 +220,10 @@
             from { opacity: 0; transform: translateX(-30px); }
             to { opacity: 1; transform: translateX(0); }
         }
+
+        .feature-icon {
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -300,7 +304,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
                 <div class="feature-card p-8 text-center fade-in">
-                    <div class="text-4xl text-pink-500 mb-4">
+                    <div class="text-4xl mb-4 feature-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Contenuti Virali</h3>
@@ -311,7 +315,7 @@
                 </div>
                 
                 <div class="feature-card p-8 text-center fade-in" style="animation-delay: 0.2s;">
-                    <div class="text-4xl text-pink-500 mb-4">
+                    <div class="text-4xl mb-4 feature-icon">
                         <i class="fas fa-star"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Eventi Esclusivi</h3>
@@ -322,7 +326,7 @@
                 </div>
                 
                 <div class="feature-card p-8 text-center fade-in" style="animation-delay: 0.4s;">
-                    <div class="text-4xl text-pink-500 mb-4">
+                    <div class="text-4xl mb-4 feature-icon">
                         <i class="fas fa-microphone-alt"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Intrattenimento Unico</h3>
@@ -380,7 +384,7 @@
                     <img src="https://i.ibb.co/DRSkb4T/federico-pasini.png" alt="Federico Pasini" class="w-full rounded-lg">
                     <div class="mt-6">
                         <h3 class="text-2xl font-bold">Federico Pasini</h3>
-                        <p class="text-pink-500 font-medium mb-4">Fondatore & Intervistatore</p>
+                        <p style="color: var(--primary-color)" class="font-medium mb-4">Fondatore & Intervistatore</p>
                         <p class="mb-6">
                             La voce e il volto di POV Interviste. Con la sua ironia e spontaneità, Federico riesce a creare un rapporto unico con ogni intervistato, 
                             dando vita a momenti esilaranti e virali.
@@ -395,7 +399,7 @@
                     <img src="https://i.ibb.co/T8kRPRB/samuel-diac.png" alt="Samuel Diac" class="w-full rounded-lg">
                     <div class="mt-6">
                         <h3 class="text-2xl font-bold">Samuel Diac</h3>
-                        <p class="text-pink-500 font-medium mb-4">Videomaker & Producer</p>
+                        <p style="color: var(--primary-color)" class="font-medium mb-4">Videomaker & Producer</p>
                         <p class="mb-6">
                             L'occhio artistico dietro ogni video. Samuel cattura i momenti più autentici e divertenti, 
                             trasformando semplici interviste in contenuti virali grazie al suo talento nella videografia.
@@ -434,8 +438,8 @@
                         <h3 class="text-2xl font-bold mb-6">Informazioni di Contatto</h3>
                         
                         <div class="flex items-center mb-8">
-                            <div class="w-12 h-12 bg-pink-500 flex items-center justify-center rounded-lg mr-4">
-                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg mr-4" style="background-color: var(--primary-color)">
+                                <i class="fas fa-map-marker-alt text-black text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold">Dove ci trovi</h4>
