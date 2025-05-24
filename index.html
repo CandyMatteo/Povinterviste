@@ -545,15 +545,62 @@
             
             // Form submission
             document.getElementById('contactForm').addEventListener('submit', function(e) {
-                // This is just to add visual feedback - the actual submission is handled by the form's action
+                e.preventDefault(); // Prevent default form submission
+                
                 const submitBtn = this.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
                 
+                // Disable the submit button and show loading state
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Invio in corso...';
                 
-                // Allow form to submit normally to the webhook URL
-                // Form will submit to the webhook defined in the action attribute
+                // Get form data
+                const formData = {
+                    event_name: document.getElementById('event_name').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value,
+                    privacy_policy: document.querySelector('input[name="privacy_policy"]').checked
+                };
+                
+                // Send data to webhook
+                fetch('https://hook.eu2.make.com/3qan58l3yfmh36zsbz9idyfhd7m3438u', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Clear form
+                    this.reset();
+                    // Show success message
+                    submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Inviato con successo!';
+                    submitBtn.style.backgroundColor = '#4CAF50';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.backgroundColor = '';
+                    }, 3000);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Show error message
+                    submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i> Errore nell\'invio';
+                    submitBtn.style.backgroundColor = '#f44336';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.backgroundColor = '';
+                    }, 3000);
+                });
             });
         });
     </script>
