@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ff2d55;
+            --primary-color: #ffcc00;
             --secondary-color: #1a1a2e;
             --accent-color: #4e00c2;
         }
@@ -48,15 +48,26 @@
             border: none;
             padding: 12px 30px;
             border-radius: 50px;
-            color: white;
+            color: black;
             font-weight: bold;
             transition: all 0.3s ease;
         }
         
         .btn-primary:hover {
-            background-color: #ff0044;
+            background-color: #e6b800;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 45, 85, 0.2);
+            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2);
+        }
+        
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+        
+        .footer-logo {
+            width: 150px;
+            height: auto;
+            filter: brightness(0) invert(1);
         }
         
         .social-icon {
@@ -110,7 +121,9 @@
         
         .team-member img {
             width: 100%;
-            height: auto;
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
             transition: all 0.5s ease;
         }
         
@@ -209,6 +222,10 @@
             from { opacity: 0; transform: translateX(-30px); }
             to { opacity: 1; transform: translateX(0); }
         }
+
+        .feature-icon {
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -216,9 +233,8 @@
     <header class="hero-section text-white">
         <div class="container mx-auto px-4 py-20">
             <nav class="flex justify-between items-center mb-16">
-                <div class="text-3xl font-extrabold">
-                    <span class="text-white">POV</span> 
-                    <span class="text-pink-500">Interviste</span>
+                <div>
+                    <img src="/assets/Logo%20P.O.V.-uerW0ihe.png" alt="POV Interviste Logo" class="logo">
                 </div>
                 <div class="flex">
                     <a href="https://www.instagram.com/pov.interviste/" target="_blank" class="social-icon instagram">
@@ -233,8 +249,8 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="w-full md:w-1/2 slide-in">
                     <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
-                        Domande <span class="text-pink-500">Assurde</span>,<br>
-                        Risposte <span class="text-pink-500">Esilaranti</span>!
+                        Questo è <span style="color: var(--primary-color)">POV</span>,<br>
+                        io sono <span style="color: var(--primary-color)">Pasini</span>!
                     </h1>
                     <p class="text-xl mb-8">
                         POV Interviste porta le domande più imprevedibili nelle discoteche e nei locali più esclusivi d'Italia. 
@@ -290,7 +306,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
                 <div class="feature-card p-8 text-center fade-in">
-                    <div class="text-4xl text-pink-500 mb-4">
+                    <div class="text-4xl mb-4 feature-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Contenuti Virali</h3>
@@ -301,7 +317,7 @@
                 </div>
                 
                 <div class="feature-card p-8 text-center fade-in" style="animation-delay: 0.2s;">
-                    <div class="text-4xl text-pink-500 mb-4">
+                    <div class="text-4xl mb-4 feature-icon">
                         <i class="fas fa-star"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Eventi Esclusivi</h3>
@@ -312,7 +328,7 @@
                 </div>
                 
                 <div class="feature-card p-8 text-center fade-in" style="animation-delay: 0.4s;">
-                    <div class="text-4xl text-pink-500 mb-4">
+                    <div class="text-4xl mb-4 feature-icon">
                         <i class="fas fa-microphone-alt"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Intrattenimento Unico</h3>
@@ -367,10 +383,10 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="team-member fade-in">
-                    <img src="https://i.ibb.co/DRSkb4T/federico-pasini.png" alt="Federico Pasini" class="w-full rounded-lg">
+                    <img src="/assets/fEDERICOPASINI-BAwDcEtp.JPG" alt="Federico Pasini" class="w-full rounded-lg">
                     <div class="mt-6">
                         <h3 class="text-2xl font-bold">Federico Pasini</h3>
-                        <p class="text-pink-500 font-medium mb-4">Fondatore & Intervistatore</p>
+                        <p style="color: var(--primary-color)" class="font-medium mb-4">Fondatore & Intervistatore</p>
                         <p class="mb-6">
                             La voce e il volto di POV Interviste. Con la sua ironia e spontaneità, Federico riesce a creare un rapporto unico con ogni intervistato, 
                             dando vita a momenti esilaranti e virali.
@@ -382,10 +398,10 @@
                 </div>
                 
                 <div class="team-member fade-in" style="animation-delay: 0.3s;">
-                    <img src="https://i.ibb.co/T8kRPRB/samuel-diac.png" alt="Samuel Diac" class="w-full rounded-lg">
+                    <img src="/assets/SAMUEL%20DIAC-gzV23oc_.jpeg" alt="Samuel Diac" class="w-full rounded-lg">
                     <div class="mt-6">
                         <h3 class="text-2xl font-bold">Samuel Diac</h3>
-                        <p class="text-pink-500 font-medium mb-4">Videomaker & Producer</p>
+                        <p style="color: var(--primary-color)" class="font-medium mb-4">Videomaker & Producer</p>
                         <p class="mb-6">
                             L'occhio artistico dietro ogni video. Samuel cattura i momenti più autentici e divertenti, 
                             trasformando semplici interviste in contenuti virali grazie al suo talento nella videografia.
@@ -424,8 +440,8 @@
                         <h3 class="text-2xl font-bold mb-6">Informazioni di Contatto</h3>
                         
                         <div class="flex items-center mb-8">
-                            <div class="w-12 h-12 bg-pink-500 flex items-center justify-center rounded-lg mr-4">
-                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg mr-4" style="background-color: var(--primary-color)">
+                                <i class="fas fa-map-marker-alt text-black text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold">Dove ci trovi</h4>
@@ -491,9 +507,8 @@
     <footer class="py-10 bg-gray-900 text-white">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-2xl font-bold mb-4 md:mb-0">
-                    <span class="text-white">POV</span> 
-                    <span class="text-pink-500">Interviste</span>
+                <div>
+                    <img src="/assets/Logo%20P.O.V.-uerW0ihe.png" alt="POV Interviste Logo" class="footer-logo">
                 </div>
                 
                 <div class="flex space-x-4">
@@ -509,7 +524,7 @@
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                 <p>&copy; 2025 POV Interviste. Tutti i diritti riservati.</p>
                 <p class="text-sm mt-2">
-                    Creato con <i class="fas fa-heart text-pink-500"></i> per Federico Pasini e Samuel Diac
+                    Creato con <i class="fas fa-heart" style="color: var(--primary-color)"></i> per Federico Pasini e Samuel Diac
                 </p>
             </div>
         </div>
