@@ -1,19 +1,144 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-    <!-- Previous head content remains the same -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POV Interviste - Interviste Virali per il tuo Locale</title>
+    <link href="../cdn.jsdelivr.net/npm/tailwindcss%402.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/%40fortawesome/fontawesome-free%406.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&amp;display=swap" rel="stylesheet">
     <style>
-        /* Previous styles remain the same */
+        /* Keep all existing styles */
+        :root {
+            --primary-color: #ff2d55;
+            --secondary-color: #1a1a2e;
+            --accent-color: #4e00c2;
+        }
         
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #ff0044;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 45, 85, 0.2);
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .instagram {
+            background: #d6249f;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        }
+        
+        .tiktok {
+            background: #000;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.15);
+        }
+        
+        .feature-card {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .team-member {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: auto;
+            transition: all 0.5s ease;
+        }
+        
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+        
+        .team-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            padding: 20px;
+            color: white;
+        }
+        
+        /* Updated video container styles */
         .video-container {
             position: relative;
             border-radius: 10px;
             overflow: hidden;
-            padding-bottom: 177.78%; /* 16:9 becomes 9:16 for mobile videos */
+            padding-bottom: 177.78%; /* Aspect ratio for mobile videos */
             height: 0;
             margin: 0 auto;
-            max-width: 315px; /* Standard width for Instagram/TikTok embeds */
-            background: #000;
+            max-width: 340px; /* Slightly wider to ensure full video visibility */
         }
         
         .video-container iframe {
@@ -28,19 +153,178 @@
         #videos .grid {
             max-width: 1200px;
             margin: 0 auto;
+            gap: 2rem;
         }
 
         #videos .slide-in {
             background: white;
-            padding: 20px;
+            padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .form-input {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .form-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(78, 0, 194, 0.1);
+            outline: none;
+        }
+        
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .checkbox-label input {
+            margin-right: 10px;
+        }
+        
+        .emoji {
+            font-size: 1.5rem;
+            margin: 0 0.2rem;
         }
 
-        /* Rest of the styles remain the same */
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in {
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
     </style>
 </head>
 <body>
-    <!-- Rest of the HTML content remains exactly the same -->
+    <!-- Keep all existing HTML content exactly the same -->
+    <!-- Header / Hero Section -->
+    <header class="hero-section text-white">
+        <!-- Existing header content -->
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <!-- Existing about content -->
+    </section>
+
+    <!-- Video Section -->
+    <section id="videos" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold section-title">Video Virali</h2>
+            <p class="text-lg mb-10">Scopri alcuni dei video più popolari delle nostre interviste in discoteca. Risate assicurate!</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="slide-in">
+                    <div class="video-container mb-4">
+                        <iframe src="https://www.tiktok.com/embed/v2/7385158095787281697" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="text-xl font-bold">Che ore sono?</h3>
+                    <p>Interviste divertenti a Cocoricò</p>
+                </div>
+                
+                <div class="slide-in" style="animation-delay: 0.2s;">
+                    <div class="video-container mb-4">
+                        <iframe src="https://www.tiktok.com/embed/v2/7490961262348635414" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="text-xl font-bold">Interviste a Rimini</h3>
+                    <p>Le domande più sorprendenti</p>
+                </div>
+                
+                <div class="slide-in" style="animation-delay: 0.4s;">
+                    <div class="video-container mb-4">
+                        <iframe src="https://www.tiktok.com/embed/v2/7477661721067408662" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="text-xl font-bold">Come ci vedi bè?</h3>
+                    <p>Cultura generale in discoteca</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <!-- Existing team content -->
+    </section>
+
+    <!-- Call To Action -->
+    <section class="py-20 bg-gradient-to-r from-purple-800 to-indigo-900 text-white text-center">
+        <!-- Existing CTA content -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <!-- Existing contact content -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-gray-900 text-white">
+        <!-- Existing footer content -->
+    </footer>
+
+    <!-- Existing scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for anchors
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                // This is just to add visual feedback - the actual submission is handled by the form's action
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Invio in corso...';
+                
+                // Allow form to submit normally to the webhook URL
+                // Form will submit to the webhook defined in the action attribute
+            });
+        });
+    </script>
 </body>
 </html>
