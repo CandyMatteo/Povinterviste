@@ -226,6 +226,16 @@
         .feature-icon {
             color: var(--primary-color);
         }
+        
+        .social-icon-large {
+            font-size: 100px;
+            margin: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icon-large:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -273,15 +283,15 @@
                         </a>
                     </div>
                 </div>
-                <div class="w-full md:w-1/2 mt-10 md:mt-0 fade-in">
-                    <div class="relative mx-auto max-w-md">
-                        <div class="bg-white p-2 rounded-lg shadow-lg transform rotate-3">
-                            <img src="https://i.ibb.co/DRSkb4T/federico-pasini.png" alt="POV Interviste in azione" class="rounded-lg">
-                        </div>
-                        <div class="bg-white p-2 rounded-lg shadow-lg transform -rotate-2 absolute top-10 -right-5">
-                            <img src="https://i.ibb.co/T8kRPRB/samuel-diac.png" alt="POV Interviste team" class="rounded-lg w-32">
-                        </div>
-                    </div>
+                <div class="w-full md:w-1/2 mt-10 md:mt-0 fade-in flex justify-center items-center">
+                    <a href="https://www.instagram.com/pov.interviste/" target="_blank" class="text-center mx-4">
+                        <i class="fab fa-instagram social-icon-large"></i>
+                        <div class="text-white text-lg mt-2">Instagram</div>
+                    </a>
+                    <a href="https://www.tiktok.com/@pov.interviste" target="_blank" class="text-center mx-4">
+                        <i class="fab fa-tiktok social-icon-large"></i>
+                        <div class="text-white text-lg mt-2">TikTok</div>
+                    </a>
                 </div>
             </div>
         </div>
