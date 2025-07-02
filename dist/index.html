@@ -259,16 +259,66 @@
         .hero-tiktok {
             background: #000;
         }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 12px 30px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            background-color: var(--primary-color);
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 1rem;
+                padding: 10px 20px;
+            }
+            
+            .nav-link {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Header / Hero Section -->
     <header class="hero-section text-white">
         <div class="container mx-auto px-4 py-20">
-            <nav class="flex justify-between items-center mb-16">
-                <div>
+            <nav class="flex flex-col md:flex-row justify-between items-center mb-16">
+                <div class="mb-4 md:mb-0">
                     <img src="/assets/Logopov-uerW0ihe.png" alt="POV Interviste Logo" class="logo">
                 </div>
+                
+                <!-- Navigation Menu -->
+                <div class="nav-menu mb-4 md:mb-0">
+                    <a href="#about" class="nav-link">Chi Siamo</a>
+                    <a href="#videos" class="nav-link">Video Virali</a>
+                    <a href="#team" class="nav-link">Il Nostro Team</a>
+                    <a href="#contact" class="nav-link">Contattaci</a>
+                </div>
+                
                 <div class="flex">
                     <a href="https://www.instagram.com/pov.interviste/" target="_blank" class="social-icon instagram">
                         <i class="fab fa-instagram"></i>
