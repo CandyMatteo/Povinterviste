@@ -228,21 +228,21 @@
 
         .hero-social-icons {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            gap: 2rem;
+            gap: 1rem;
             margin-bottom: 2rem;
         }
 
         .hero-social-icon {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 20px;
+            border-radius: 15px;
             color: white;
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             transition: all 0.3s ease;
             text-decoration: none;
         }
@@ -266,18 +266,16 @@
     <header class="hero-section text-white">
         <div class="container mx-auto px-4 py-20">
             <nav class="flex justify-between items-center mb-16">
-                <div class="flex items-center">
-                    <div class="flex mr-8">
-                        <a href="https://www.instagram.com/pov.interviste/" target="_blank" class="social-icon instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@pov.interviste" target="_blank" class="social-icon tiktok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
                 <div>
                     <img src="Images/Logopov.png" alt="POV Interviste Logo" class="logo">
+                </div>
+                <div class="flex">
+                    <a href="https://www.instagram.com/pov.interviste/" target="_blank" class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@pov.interviste" target="_blank" class="social-icon tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
                 </div>
             </nav>
             
@@ -287,7 +285,7 @@
                         Questo è <span style="color: var(--primary-color)">POV</span>,<br>
                         io sono <span style="color: var(--primary-color)">Pasini</span>!
                     </h1>
-                    <p class="text-xl mb-8">
+                    <p class="text-xl mb-6">
                         POV Interviste porta le domande più imprevedibili nelle discoteche e nei locali più esclusivi d'Italia. 
                         Un format unico che cattura momenti autentici e divertenti!
                     </p>
